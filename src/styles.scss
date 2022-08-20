@@ -1,1 +1,86 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    background: #000;
+}
+@mixin btn ($background) {
+    background: $background;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 5px;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    h1{
+        font-size: 3rem;
+        color: transparent;
+        background-image: linear-gradient(to right, #00a2ff 0%, #b857f5 100%);
+        -webkit-background-clip: text;
+    }
+}
+form{
+    background-color: #111;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 5px #00a2ff;
+    margin: 10px;
+}
+.form-group{
+    margin: 5px;
+    label{
+        color: transparent;
+        background-image: linear-gradient(to right, #6f00ff 0%, #ff00b7 100%);
+        -webkit-background-clip: text;
+        font-size: 1.2rem;
+        display: block;
+        margin: 5px 0;
+        font-weight: bold;
+    }
+    input{
+        border: none;
+        border-bottom: 1px solid #fff;
+        background-color: transparent;
+        color: #fff;
+        font-size: 1.2rem;
+        padding: 5px;
+        width: 100%;
+        outline: none;
+    }
+}
+.container-buttons{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    .btn-add{
+        @include btn(#00a2ff);
+    }
+    .btn-subtract{
+        @include btn(#ff00b7);
+    }
+    .btn-multiply{
+        @include btn(#00ffb7);
+    }
+    .btn-divide{
+        @include btn(#6f00ff);
+    }
+}
+h3{
+    font-size: 1.7rem;
+    margin: 5px 0;
+    text-align: center;
+    color: #fff;
+}
